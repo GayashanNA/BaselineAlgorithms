@@ -125,15 +125,3 @@ def module_map(network_nodes, app_modules):
     if num_modules > mapped_modules_count:
         print('Unable to map all the modules to the network nodes.')
     return mapped_modules
-
-
-# , NetworkNode('N3', 5, 15, 50)
-curr_network_nodes = [NetworkNode('N1', 200, 1100, 100), NetworkNode('N2', 5, 15, 5)]
-curr_app_modules = [AppModule('M1', 50, 900, 5), AppModule('M2', 50, 100, 5), AppModule('M3', 5, 15, 5),
-                    AppModule('M4', 5, 15, 50)]
-
-_mapped_modules = module_map(curr_network_nodes, curr_app_modules)
-
-for k, v in _mapped_modules.items():
-    for m in v:
-        print(f'{k.node_id} {m.module_id}')
